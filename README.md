@@ -12,6 +12,6 @@ All of them are successfully tested to run in Anaconda Spyder on both Ubuntu 18 
                              Another plus is that data augmentation is executed in a parallelised manner.) 
 
 * Numpy                     (for speed-up of basic mathematical functions' execution)
-* Scikit-Learn              (for metrics functions)
+* Scikit-Learn              (for metric functions)
 * Pandas                    (for reading-in .csv dataset files)
 * Matplotlib                (for the graphs) 
