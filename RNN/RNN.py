@@ -27,7 +27,7 @@ X_train = np.reshape(X_train, (1257, 1, 1))
 
 # Importing the Keras libraries and packages
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.layers import LSTM
 
 # Initialising the RNN
@@ -36,10 +36,12 @@ regressor = Sequential()
 # Adding the input layer and the LSTM layer
 # units - до колко неща да запомня в memory cell-а.
 # input_shape - None означава, очаквай произволен timestep, 1 - feature.
-regressor.add(LSTM(units = 4, activation = 'sigmoid', input_shape = (None,1)))
+regressor.add(LSTM(units = 40, activation = 'sigmoid', input_shape = (None,1)))
+regressor.add(Dropout(rate=0.8))
 
 # Adding the output layer
 regressor.add(Dense(units = 1))
+
 # Compiling the RNN
 regressor.compile(optimizer='adam', loss = 'mean_squared_error')
 # Fitting the RNN to the Training set
